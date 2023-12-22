@@ -1,0 +1,5 @@
+/target
+/vendor
+.vscode
+application.yaml
+.DS_Store

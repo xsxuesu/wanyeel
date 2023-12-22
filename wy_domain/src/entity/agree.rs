@@ -1,0 +1,110 @@
+use rbatis::{DateNative, DateTimeNative};
+use serde::{Deserialize, Serialize};
+
+// 托盘协议
+#[crud_table(table_name:agree)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct Agree {
+    pub id: Option<u64>,
+    pub pay_id: Option<u64>,
+    pub uid: Option<String>,
+    pub company_code: Option<String>,
+    pub contract_no: Option<String>,
+    pub agree_type: Option<String>,
+    pub supply_dept: Option<String>,
+    pub delivery_dept: Option<String>,
+    pub agree_person: Option<String>,
+    pub agree_date: Option<DateNative>,
+    pub deposit_amount: Option<f64>,
+    pub unit_money: Option<String>,
+    pub agree_amount: Option<f64>,
+    pub interest_rate: Option<f64>,
+    pub interest_start: Option<DateNative>,
+    pub limit_days: Option<i32>,
+    pub agree_status: Option<i32>,
+    pub mome: Option<String>,
+    pub all_amount: Option<f64>,
+    pub payed_amount: Option<f64>,
+    pub after_sale_amount: Option<f64>,
+    pub trans_in_amount: Option<f64>,
+    pub trans_out_amount: Option<f64>,
+    pub created_at: Option<DateTimeNative>,
+    pub updated_at: Option<DateTimeNative>,
+}
+
+impl_field_name_method!(Agree {
+    id,
+    pay_id,
+    uid,
+    company_code,
+    contract_no,
+    agree_type,
+    supply_dept,
+    delivery_dept,
+    agree_person,
+    agree_date,
+    deposit_amount,
+    unit_money,
+    agree_amount,
+    interest_rate,
+    interest_start
+    limit_days,
+    agree_status,
+    mome,
+    all_amount,
+    payed_amount,
+    after_sale_amount,
+    trans_in_amount,
+    trans_out_amount,
+    created_at,
+    updated_at,
+});
+
+// 托盘的产品
+#[crud_table(table_name:agree_product)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
+pub struct AgreeProduct {
+    pub id: Option<u64>,
+    pub sale_id: Option<u64>,
+    pub agree_id: Option<u64>,
+    pub company_code: Option<String>,
+    pub variety: Option<String>,
+    pub origin: Option<String>,
+    pub shop_sign: Option<String>,
+    pub spec: Option<String>,
+    pub cacl_mode: Option<String>,
+    pub unit: Option<String>,
+    pub unit_money: Option<String>,
+    pub buy_number: Option<f64>,
+    pub one_weight: Option<f64>,
+    pub buy_weight: Option<f64>,
+    pub agree_unitprice: Option<f64>,
+    pub agree_amount: Option<f64>,
+    pub tax_rate: Option<f64>,
+    pub warehouse: Option<String>,
+    pub created_at: Option<DateTimeNative>,
+    pub updated_at: Option<DateTimeNative>,
+}
+
+impl_field_name_method!(AgreeProduct {
+    id,
+    sale_id,
+    agree_id,
+    company_code,
+    variety,
+    origin,
+    shop_sign,
+    spec,
+    cacl_mode,
+    unit,
+    unit_money,
+    buy_number,
+    one_weight,
+    buy_weight,
+    agree_unitprice,
+    agree_amount,
+    tax_rate,
+    warehouse,
+    created_at,
+    updated_at,
+});
